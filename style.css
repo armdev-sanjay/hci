@@ -1,0 +1,85 @@
+.body{
+    background-color: rgb(32, 32, 32);
+    height: 100vh;
+}
+
+
+#sidebar{
+    background-color:  rgb(58, 58, 58);
+    color: #faebd7;
+    height:90vh;
+    margin-left: 5vh;
+    margin-top: 5vh;
+    z-index: 2;
+    border-radius: 2%;
+}
+
+
+.timetable{
+    background-color: rgb(58, 58, 58);
+    color: #faebd7;
+    height:90vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 5vh;    
+    z-index: 2;
+    border-radius: 2%;    
+}
+
+
+.timetable-MWF{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(107, 107, 107);
+    color: #faebd7;
+    margin-left: 1vh;
+    margin-top: 3vh;   
+    width: 95%;   
+    height:15%; 
+}
+
+.timetable-TR{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(122, 120, 120);
+    color: #faebd7;
+    margin-left: 1vh;
+    margin-top: 3vh;   
+    width: 95%;   
+    height:15%; 
+}
+
+.course{
+    background-color: grey;
+    position: relative;
+    padding:5%; 
+    border-color:rgb(58, 58, 58);
+    border-width: 1px;
+    border-style: solid;
+    cursor: grab;
+}
+
+.course-hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+}
+
+.course-hold{
+    border:solid #cccccc 4px;     
+}
+
+.course-invisible {
+    display:none; 
+}
+
+.add{
+    position: relative;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.8;
+    cursor: pointer;
+    color:red;
+}
