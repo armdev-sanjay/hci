@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Borealis!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+  
+
+  
+  
+  </head>
+
+
+
+  <body class = "body">
+    <div class="columns">
+
+<!--SIDEBAR START-->
+        <div class="column is-one-quarter" id = "sidebar">
+            <div class="courseSelector">
+                <input type="text" class="input" placeholder="Should be a drop down"/>
+                <span class="add">+</span>
+            </div>
+            <ul>
+                <li class="course" draggable="true">COMP 1012</li>
+                <li class="course" draggable="true">MATH 1510</li>
+                <li class="course" draggable="true">CHEM 1300</li>
+                <li class="course" draggable="true">ENG 1450</li>                
+              </ul>
+        </div>
+
+
+<!--TIMETABLE START-->
+        <div class="column timetable" >
+            <div class = "column timetable-MWF">
+                M
+            </div>
+            <div class = "column timetable-TR">
+                T
+            </div>            
+            <div class = "column timetable-MWF">
+                W
+            </div>
+            <div class = "column timetable-TR">
+                TR
+            </div>            
+            <div class = "column timetable-MWF">
+                F
+            </div>                        
+        </div>
+
+
+    </div>
+    <script src ="app.js"></script>
+
+  </body>
+</html>
