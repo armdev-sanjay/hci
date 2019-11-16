@@ -1,103 +1,126 @@
-
 //______________________________________________________________________________________________________________________
 //SANJAY JS
 //______________________________________________________________________________________________________________________
 
+//___________________________________________________GLOBAL vars
 
+const fullCourseList = ["COMP 1020", "MATH 1510", "CHEM 1300", "PHYS 1020"];
+var selectedCourseList = [];
 
+//__________________________________________________ INIT autocomplete input
 
-// Drag Events
-function dragStart(e) {
-    dragSrcEl = this;
-    this.className += ' course-hold'; 
-    setTimeout(()=> this.className = ' course-invisible', 0); 
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', this.innerHTML);
-  };
-  
-  function dragEnter(e) {
-    this.classList.add('over');
-  }
-  
-  function dragLeave(e) {
-    e.stopPropagation();
-    this.classList.remove('over');
-  }
-  
-  function dragOver(e) {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    return false;
-  }
-  
-  function dragDrop(e) {
-    if (dragSrcEl != this) {
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData('text/html');
-    }
-    return false;
-  }
-  
-  function dragEnd(e) {
-    var listItens = document.querySelectorAll('.course');
-    [].forEach.call(listItens, function(item) {
-      item.classList.remove('over');
-    });
-    this.style.opacity = '1';
-  }
-  
-  function addEventsDragAndDrop(el) {
-    el.addEventListener('dragstart', dragStart, false);
-    el.addEventListener('dragenter', dragEnter, false);
-    el.addEventListener('dragover', dragOver, false);
-    el.addEventListener('dragleave', dragLeave, false);
-    el.addEventListener('drop', dragDrop, false);
-    el.addEventListener('dragend', dragEnd, false);
-  }
-  
-  
-  
-  // Add Listeners to Course Cards
-  var listItens = document.querySelectorAll('.course');
-  [].forEach.call(listItens, function(item) {
-    addEventsDragAndDrop(item);
-    item.addEventListener('mouseover', mouseOverCourse); 
-    item.addEventListener('mouseout', mouseOutCourse); 
+function getFullCouseList() {
+  var input = document.getElementById("input");
+  var awesomplete = new Awesomplete(input, {
+    minChars: 1,
+    maxItems: 5,
+    autoFirst: true
   });
-  
-  
-  
-  //Mouse Over and Out for course careds
-  function mouseOverCourse(){
-    this.className+=" course-hover";
+  awesomplete.list = fullCourseList;
+}
+
+//___________________________________________________START: Mouse Over and Out for course cards
+
+function mouseOverCourse() {
+  this.className += " course-hover";
+}
+
+function mouseOutCourse() {
+  this.className = "course";
+}
+function cursorGrabbing() {
+  this.className = "course course-hover course-hold";
+}
+function cursorGrab() {
+  this.className = "course course-hover";
+}
+//___________________________________________________END: Mouse Over and Out for course cards
+
+//__________________________________________________ START: Add new Course
+
+const adder = document.querySelector(".add");
+adder.addEventListener("click", addNewCourse);
+
+function enterCourseKeyListener(e) {
+  if (e.key === "Enter") {
+    addNewCourse();
   }
-  
-  function mouseOutCourse(){
-    this.className ="course";
+}
+
+function addNewCourse() {
+  var newItem = document.querySelector(".input").value;
+  if (
+    !fullCourseList.includes(newItem) ||
+    selectedCourseList.includes(newItem)
+  ) {
+    alert("FATAL ERROR!!!!!");
+    return;
   }
-  
-  
-  // Add new Course
-  
-  const adder = document.querySelector('.add'); 
-  adder.addEventListener('click', addNewCourse); 
-  
-  function addNewCourse(){  
-    var newItem = document.querySelector('.input').value;
-  
-    if (newItem != '') {
-      document.querySelector('.input').value = '';
-      var li = document.createElement('li');
-      var attr = document.createAttribute('draggable');
-      var ul = document.querySelector('ul');
-      li.className = 'course';
-      attr.value = 'true';
-      li.setAttributeNode(attr);
-      li.appendChild(document.createTextNode(newItem));
-      ul.appendChild(li);
-      addEventsDragAndDrop(li);
-    }  
+  document.querySelector(".input").value = "";
+
+  var ul = document.getElementById("sortable");
+
+  var li = document.createElement("li");
+  li.innerHTML = newItem;
+  li.setAttribute("class", "course");
+
+  var button = document.createElement("button");
+  button.innerHTML = "hi";
+  button.setAttribute("class", "accordian");
+
+  li.appendChild(button);
+
+  var panel = document.createElement("div");
+  panel.setAttribute("class", "panel");
+
+  var para = document.createElement("p");
+  para.innerHTML = `                
+  Lorem ipsum<br />
+  consectetur <br />
+  eiusmod tempor <br />
+  labore et dolore <br />
+  enim ad minim <br />
+  nostrud <br />
+  nisi ut <br />`;
+
+  panel.appendChild(para);
+
+  li.appendChild(panel);
+  ul.appendChild(li);
+  button.addEventListener("click", openCourseInfoPanel);
+  li.addEventListener("mousedown", cursorGrabbing);
+  li.addEventListener("mouseup", cursorGrab);
+  li.addEventListener("mouseover", mouseOverCourse);
+  li.addEventListener("mouseout", mouseOutCourse);
+  selectedCourseList.push(newItem);
+}
+//__________________________________________________END: Add new Course
+
+function sendPriorityList() {
+  var listItems = document.querySelectorAll(".course");
+  console.log("PRIORITY LIST");
+  listItems.forEach(item => {
+    console.log(item.innerHTML);
+  });
+}
+
+//___________________________________________________________
+var acc = document.getElementsByClassName("accordian");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", openCourseInfoPanel);
+}
+
+function openCourseInfoPanel() {
+  console.log("click");
+  this.classList.toggle("active");
+  var panel = this.nextElementSibling;
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
   }
+
   
   
   
@@ -563,3 +586,5 @@ false, "Mae Daproph", "Tier 234", "more"));
   //YUNI JS
   //______________________________________________________________________________________________________________________
   
+=======
+}
