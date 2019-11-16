@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Borealis!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    
-  
 
-  
-  
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./awesomplete/awesomplete.css" />
+    <script src="./awesomplete/awesomplete.js" async></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+      });
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
   </head>
 
-
-
-  <body class = "body">
+  <body onLoad="getFullCouseList()" class="body">
     <div class="columns">
+      <!--SIDEBAR START-->
+      <div class="column is-one-quarter" id="sidebar">
+        <div class="courseSelector">
+          <input
+            onkeypress="enterCourseKeyListener(event)"
+            id="input"
+            class="input"
+            placeholder="Start Typing Course .."
+          />
 
-<!--SIDEBAR START-->
-        <div class="column is-one-quarter" id = "sidebar">
-            <div class="courseSelector">
-                <input type="text" class="input" placeholder="Should be a drop down"/>
-                <span class="add">+</span>
-            </div>
-            <ul>
-                <li class="course" draggable="true">COMP 1012</li>
-                <li class="course" draggable="true">MATH 1510</li>
-                <li class="course" draggable="true">CHEM 1300</li>
-                <li class="course" draggable="true">ENG 1450</li>                
-              </ul>
+          <span class="add">+</span>
         </div>
+        <ul id="sortable"></ul>
 
-
-<!--TIMETABLE START-->
-        <div class="column timetable" >
-            <div class = "column timetable-MWF">
-                M
-            </div>
-            <div class = "column timetable-TR">
-                T
-            </div>            
-            <div class = "column timetable-MWF">
-                W
-            </div>
-            <div class = "column timetable-TR">
-                TR
-            </div>            
-            <div class = "column timetable-MWF">
-                F
-            </div>                        
+        <div class="button1" onclick="sendPriorityList(event)">
+          go
         </div>
+      </div>
 
-
+      <!--TIMETABLE START-->
+      <div class="column timetable">
+        <div class="column timetable-MWF">
+          M
+        </div>
+        <div class="column timetable-TR">
+          T
+        </div>
+        <div class="column timetable-MWF">
+          W
+        </div>
+        <div class="column timetable-TR">
+          TR
+        </div>
+        <div class="column timetable-MWF">
+          F
+        </div>
+      </div>
     </div>
-    <script src ="main.js"></script>
-
+    <script src="main.js"></script>
   </body>
 </html>
