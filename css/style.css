@@ -1,0 +1,458 @@
+.container {
+  background-image: url("../image/aurora-borealis-clipart-night-sky-527739-9559850.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+#timetable-div {
+  padding: 10px;
+
+  flex: 1 1 auto;
+}
+.timetable {
+  color: #faebd7;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-top: 2vh;
+  z-index: 2;
+  border-radius: 1%;
+  display: flex;
+}
+
+ol {
+  list-style: none;
+}
+
+.timetable {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.85);
+
+  color: #444;
+  padding: 35px;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.nowMarker {
+  position: absolute;
+  border-bottom: 2px solid #ff7f6e;
+  z-index: 100;
+  width: 100%;
+  top: -2px;
+  transition: top 2s ease-in-out;
+}
+
+.timings {
+  margin: 0em 0 0 0;
+  padding: 0 3px 0 0;
+  width: 3em;
+  height: 68em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+.week {
+  margin: 0;
+  display: flex;
+  padding: 0;
+  width: 100%;
+  border-top: 2px solid #ddd;
+  height: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.day {
+  position: relative;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  min-width: calc(100.5% / 3);
+  transition: min-width 0.2s ease-in-out;
+}
+
+.name {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hour_MWF {
+  position: absolute;
+  height: 5em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  padding-top: 1em;
+  border-radius: 7px;
+
+  font-size: 12px;
+}
+.hour_TTR {
+  position: absolute;
+  height: 5em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  background-color: white;
+  text-align: center;
+  padding-top: 1em;
+  line-height: 2em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.Mon {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  padding-top: 1em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.Tue {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  padding-top: 1em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.Wed {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  padding-top: 1em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+.Thr {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  background-color: white;
+  text-align: center;
+  padding-top: 1em;
+  line-height: 2em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.Fri {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+  background-color: white;
+  text-align: center;
+  padding-top: 1em;
+  line-height: 2em;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.hour__08 {
+  top: 4em;
+}
+
+.hour__09 {
+  top: 11em;
+}
+
+.hour__10 {
+  top: 18em;
+}
+
+.hour__11 {
+  top: 25em;
+}
+
+.hour__12 {
+  top: 32em;
+}
+
+.hour__13 {
+  top: 39em;
+}
+
+.hour__14 {
+  top: 46em;
+}
+
+.hour__15 {
+  top: 51em;
+}
+
+.hour__16 {
+  top: 58em;
+}
+
+.hour__083 {
+  top: 7em;
+}
+
+.hour__093 {
+  top: 14em;
+}
+
+.hour__103 {
+  top: 22em;
+}
+
+.hour__113 {
+  top: 29em;
+}
+
+.hour__123 {
+  top: 37em;
+}
+
+.hour__133 {
+  top: 44em;
+}
+
+.hour__143 {
+  top: 51em;
+}
+
+.hour__153 {
+  top: 58em;
+}
+
+.hour__163 {
+  top: 65em;
+}
+
+.hour--two {
+  height: 8em;
+}
+
+.hour--three {
+  height: 12em;
+}
+
+.class1 {
+  background: linear-gradient(to right, #def042, #a9f279);
+  color: black;
+
+  /*background-image: linear-gradient(to right, #3c32ca, #6827bd);*/
+}
+
+.class2 {
+  background: linear-gradient(to right, #93f279, #5ee6b2);
+  color: black;
+}
+
+.class3 {
+  background: linear-gradient(to right, #32dab8, #1fa5c7);
+  color: black;
+}
+
+.class4 {
+  background: linear-gradient(to right, #2c99cc, #2c50b6);
+}
+
+.class5 {
+  background-image: linear-gradient(to right, #392bb1, #621c91);
+  /*background-image: linear-gradient(to right, #621c91, #8f2286);*/
+}
+
+#toggleSched {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.classNameText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
+
+.sectionText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: x-small;
+  margin: 0;
+  padding: 0;
+}
+.week {
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .timetable {
+    flex-direction: column;
+  }
+  .timings {
+    padding: 0 0 3px 3%;
+    width: 96%;
+    height: 3em;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+  }
+  .times-li {
+    transform: rotate(-60deg);
+  }
+  .name {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+    font-weight: bold;
+    width: 4%;
+    line-height: 5em;
+    height: 5em;
+  }
+  .week {
+    flex-direction: column;
+  }
+  .hour_MWF {
+    top: 0;
+    width: 7%;
+    height: 98%;
+  }
+  .hour_TTR {
+    top: 0;
+    width: 11%;
+    height: 98%;
+  }
+  .hour__083 {
+    left: 6%;
+  }
+  .hour__09 {
+    left: 10.5%;
+  }
+
+  .hour__093 {
+    left: 15%;
+  }
+  .hour__10 {
+    left: 19.5%;
+  }
+  .hour__103 {
+    left: 24%;
+  }
+  .hour__11 {
+    left: 28.5%;
+  }
+  .hour__113 {
+    left: 33%;
+  }
+  .hour__12 {
+    left: 37.5%;
+  }
+  .hour__123 {
+    left: 42%;
+  }
+  .hour__13 {
+    left: 46.5%;
+  }
+  .hour__133 {
+    left: 51%;
+  }
+  .hour__14 {
+    left: 55.5%;
+  }
+  .hour__143 {
+    left: 60%;
+  }
+  .hour__15 {
+    left: 64.5%;
+  }
+  .hour__153 {
+    left: 69%;
+  }
+  .hour__16 {
+    left: 73.5%;
+  }
+  .hour__163 {
+    left: 78%;
+  }
+  .hour__17 {
+    left: 82.5%;
+  }
+  .hour__173 {
+    left: 87%;
+  }
+  .hour__18 {
+    left: 91.5%;
+  }
+  .hour__183 {
+    left: 96%;
+  }
+  .hour--two {
+    width: 12%;
+  }
+  .hour--three {
+    width: 18%;
+  }
+}
+
+.add {
+  cursor: pointer;
+  color: white;
+}
+
+.add:hover {
+  cursor: pointer;
+  color: #20b2aa;
+}
+
+#nextSched {
+  color: black;
+  cursor: pointer;
+  font-size: x-large;
+}
+#nextSched:hover {
+  color: #20b2aa;
+}
+
+#nextSched:after {
+  color: black;
+}
+#prevSched {
+  color: black;
+  cursor: pointer;
+  font-size: x-large;
+}
+#prevSched:hover {
+  color: #20b2aa;
+}
+
+#prevSched:after {
+  color: black;
+}

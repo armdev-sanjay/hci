@@ -1,0 +1,268 @@
+@import url("https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
+.list {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+#itemsWrapper {
+  width: 40%;
+  border-right: solid 2px darkgray;
+  max-width: 40%;
+  min-width: 10%;
+  min-height: 549px;
+  height: 96vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding: 5px;
+}
+
+#itemsWrapper2 {
+  height: calc(100% - 55px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.course {
+  background-color: rgba(255, 255, 255, 0.795);
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  cursor: pointer;
+  border-left-width: 8px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgb(88, 8, 24),
+      crimson,
+      crimson,
+      crimson,
+      rgb(88, 8, 24)
+    )
+    1 100%;
+  cursor: default;
+}
+
+.courseBorder1 {
+  border-image: linear-gradient(to bottom, #def042, #a9f279) 1 100%;
+}
+
+.courseBorder2 {
+  border-image: linear-gradient(to bottom, #93f279, #5ee6b2) 1 100%;
+}
+
+.courseBorder3 {
+  border-image: linear-gradient(to bottom, #32dab8, #1fa5c7) 1 100%;
+}
+
+.courseBorder4 {
+  border-image: linear-gradient(to bottom, #2c99cc, #2c50b6) 1 100%;
+}
+
+.courseBorder5 {
+  border-image: linear-gradient(to bottom, #392bb1, #621c91) 1 100%;
+}
+
+.course-title {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.heading {
+  margin: 10px;
+  margin-bottom: 15px;
+  font-size: large;
+  display: flex;
+  padding-right: 5px;
+  border-radius: 2px;
+}
+
+.section {
+  border-left: solid 2px #a0522d;
+  border-bottom: solid 2px lightgray;
+  margin: 2px;
+  margin-left: 25px;
+  padding: 7px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sectionheading {
+  font-size: medium;
+  margin: auto;
+}
+
+.sectioninfo {
+  font-size: small;
+  border-top: solid 0.5px lightgray;
+  padding: 5px;
+}
+
+.my-handle {
+  cursor: move;
+  cursor: -webkit-grabbing;
+  margin-right: 5px;
+}
+
+.hover {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.hide {
+  opacity: 0;
+  transition: 0.5s;
+  height: 0px;
+  display: none;
+}
+
+.chosen {
+  color: black;
+  background-color: #eee;
+}
+
+.ghost {
+  opacity: 0.7;
+}
+
+.accordion,
+.accordion-main {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active {
+  background-color: #eee;
+}
+
+.accordian-hover {
+  background-color: #eee;
+}
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panelmain {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.delete {
+  background-color: lightcoral;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.lock {
+  background-color: grey;
+}
+
+.glyphicon-ok-circle {
+  color: #20b2aa;
+  z-index: 0;
+}
+
+.glyphicon-remove-circle {
+  color: lightcoral;
+  z-index: 0;
+}
+
+.glyphicon {
+  z-index: 0;
+}
+
+#itemsWrapper2::-webkit-scrollbar {
+  width: 3px;
+  background-color: #eee;
+  border-radius: 20px;
+}
+
+#itemsWrapper2::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: grey;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.courseSelector {
+  padding: 10px;
+  width: 100%;
+  position: sticky;
+  display: flex;
+  font-size: medium;
+  z-index: 2;
+}
+
+.input {
+  outline: none;
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 0.5px lightgray;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.911);
+  color: black;
+  -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.awesomplete {
+  width: 100%;
+}
+
+#awesomplete_list_1 {
+  padding: 10px;
+  opacity: 100%;
+}
+
+.add {
+  margin-right: auto;
+  font-size: x-large;
+  padding-left: 7px;
+}
+
+.border-searchbar {
+  border: solid 1px #20b2aa;
+}
+
+.focus-red {
+  border: solid 1px crimson;
+}
+
+.course-title-wrapper {
+  display: flex;
+}
+
+#more-course-info-button {
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.down {
+  margin-left: 1em;
+}

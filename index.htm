@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Borealis!</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="css/info.css" />
+    <link rel="stylesheet" type="text/css" href="css/courseInfo.css" />
+
+    <link rel="stylesheet" href="./awesomplete/awesomplete.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./awesomplete/awesomplete.js" async></script>
+  </head>
+
+  <body onLoad="getFullCourseList()" class="body">
+    <div class="container">
+      <!--SIDEBAR START-->
+      <div id="itemsWrapper">
+        <div class="courseSelector">
+          <input
+            onkeypress="enterCourseKeyListener(event)"
+            id="input"
+            class="input"
+            placeholder="Start Typing Course ..."
+          />
+          <span class="add" id="add">+</span>
+        </div>
+
+        <div id="itemsWrapper2">
+          <div class="list" id="items"></div>
+          <div id="info-card" class="info-card">
+            <div class="info-flex-wrapper">
+              <div class="info-card-heading">
+                Borealis Course Scheduler
+                <span
+                  id="minimize"
+                  class="minimize glyphicon glyphicon-minus tooltip"
+                >
+                  <span class="tooltiptext">minimize</span>
+                </span>
+              </div>
+              <div class="tiny-heading">
+                INSTRUCTIONS
+              </div>
+            </div>
+
+            <div class="instructions">
+              <b>Step 1: </b>Add courses to this priority list sidebar using the
+              above search bar
+            </div>
+            <div class="instructions">
+              <b>Step 2: </b>Drag n drop courses to prioritize your schedule
+            </div>
+            <div class="instructions">
+              <b>Step 3: </b>Choose your favorite schedule!
+            </div>
+            <div class="info-flex-wrapper">
+              <div class="course-info course1">
+                This is a <i>high priority</i> class
+              </div>
+              <div class="course-info course2">
+                This is a <i>medium priority</i> class
+                <div class="section-info section1">
+                  <i>high priority</i> section
+                </div>
+                <div class="section-info section2">
+                  <i>low priority</i> section
+                </div>
+              </div>
+
+              <div class="course-info course4">
+                This is a <i>low priority</i> class
+              </div>
+              <div class="course-info course5">
+                This class didn't fit the schedule
+              </div>
+            </div>
+            <div class="tiny-heading">
+              *Note: Available courses to chose from for this prototype are:
+              <ul>
+                <li>STAT 1000</li>
+                <li>MATH 1210</li>
+                <li>PHYS 1200</li>
+                <li>PHIL 1300</li>
+                <li>COMP 1010</li>
+                <li>ENGL 1400</li>
+                <li>MATH 1500</li>
+              </ul>
+            </div>
+          </div>
+          <div id="open-info-card" class="open-info-card hide">
+            <span class="glyphicon glyphicon-info-sign"></span>
+          </div>
+        </div>
+      </div>
+      <!--Right side flex box-->
+      <div class="right-flex">
+        <!--TIMETABLE START-->
+        <div id="timetable-div">
+          <div class="timetable">
+            <ol class="timings">
+              <li class="times-li"><time datetime="08:30">08:30</time></li>
+              <li class="times-li">09:30</li>
+              <li class="times-li">10:30</li>
+              <li class="times-li">11:30</li>
+              <li class="times-li">12:30</li>
+              <li class="times-li">13:30</li>
+              <li class="times-li">14:30</li>
+              <li class="times-li">15:30</li>
+              <li class="times-li">16:30</li>
+              <li class="times-li">17:30</li>
+              <li class="times-li">18:30</li>
+            </ol>
+            <ol class="week">
+              <li class="day" id="Mon">
+                <span class="name">Mon</span>
+              </li>
+              <li class="day" id="Tue">
+                <span class="name">Tue</span>
+              </li>
+              <li class="day" id="Wed">
+                <span class="name">Wed</span>
+              </li>
+              <li class="day" id="Thr">
+                <span class="name">Thu</span>
+              </li>
+              <li class="day" id="Fri">
+                <span class="name">Fri</span>
+              </li>
+            </ol>
+            <div id="toggleSched"></div>
+          </div>
+        </div>
+        <div id="more-course-info" class="more-course-info hide">
+          <div class="course-info-heading">
+            Human Computer Interaction 1
+          </div>
+          <div class="course-info-subheading borderbottom">
+            <div class="course-code">
+              COMP 3020
+            </div>
+            <div class="credit-hours">
+              3.0 Credit Hours
+            </div>
+          </div>
+          <div class="course-info-subheading ">
+            Description
+          </div>
+          <div class="course-description">
+            This feature was not built out for this prototype. More sub-features
+            such as professor information, course reviews etc. could be
+            experimented with in future iterations
+          </div>
+          <div class="course-info-subheading">
+            Pre-Requisites
+          </div>
+          <div class="course-prereq1">
+            <div class="course-prereq11">
+              COMP 2140
+            </div>
+            OR
+            <div class="course-prereq11 margin-fix">
+              COMP 2160
+            </div>
+          </div>
+          <div class="course-prereq1">
+            <div class="course-prereq11">
+              PSYC 2480
+            </div>
+            Recommended
+          </div>
+          <div class="course-info-subheading">
+            Seats
+          </div>
+          <div class="course-seats">
+            <div class="seats-full">104 full</div>
+            <div class="seats-empty">12 empty</div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+  <script src="js/infoJS.js"></script>
+  <script src="js/moreCourseInfo.js"></script>
+  <script>
+    $(function() {
+      $("#itemsWrapper").resizable({
+        handles: "e"
+      });
+    });
+  </script>
+</html>
